@@ -5,9 +5,9 @@ html {
 }
 header{
     display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
+    flex-flow: wrap;
     align-items: center;
+    justify-content: space-between;
 }
 header img {
     height: 5vw;
@@ -15,6 +15,30 @@ header img {
 header h1 {
     font-size: 3.5vw;
     padding-left: -10vw;
+}
+nav {
+    display:flex;
+    align-self: center;
+}
+nav div {
+    border-radius: 100%;
+    color:#FFE81F;
+    border-color: black;
+    border-width: 0px;
+    height: 10vw;
+    width: 10vw;
+    min-width: 100px;
+    background: url('https://w7.pngwing.com/pngs/361/43/png-transparent-star-wars-tiny-death-star-yoda-anakin-skywalker-r2-d2-death-star-purple-sphere-r2d2-thumbnail.png') no-repeat scroll;
+    background-color: black;
+    background-size: contain;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform .2s;
+    text-align:center;
+    
+}
+nav div:hover {
+    transform: scale(1.5);
 }
 body {
     display: flexbox;
@@ -24,11 +48,4 @@ body {
 section {
     text-align: center;
 }
-button, input {
-    border-radius: 50%;
-    height: 10vw;
-    width: 10vw;
-    background-image: url('shorturl.at/uIJPY');
-    cursor: pointer;
-    font-weight: bold;
-}
+

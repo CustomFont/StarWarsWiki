@@ -1,0 +1,73 @@
+html {
+    color: #FFE81F;
+    background-color: black;
+    background-image: url('https://cdn.wallpapersafari.com/1/97/co341S.jpg');
+}
+header{
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+header img {
+    height: 5vw;
+}
+header h1 {
+    font-size: 3.5vw;
+    padding-left: -10vw;
+}
+header nav {
+    display:flex;
+    align-self: center;
+}
+header nav div {
+    border-radius: 100%;
+    color:#FFE81F;
+    border-color: black;
+    border-width: 0px;
+    height: 10vw;
+    width: 10vw;
+    min-width: 100px;
+    background: url('https://w7.pngwing.com/pngs/361/43/png-transparent-star-wars-tiny-death-star-yoda-anakin-skywalker-r2-d2-death-star-purple-sphere-r2d2-thumbnail.png') no-repeat scroll;
+    background-color: black;
+    background-size: contain;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform .2s;
+    text-align:center;
+    
+}
+header nav div:hover {
+    transform: scale(1.5);
+}
+body {
+    justify-content: center;
+}
+.content-container {
+    background-color: white;
+}
+.sidebar {
+    text-align: left;
+    flex-direction:column;
+    background-color: red;
+    width: 30%;
+    min-height: 60vw;
+    border-radius: 5%;
+    margin-left: 1vw;
+    float:left;
+    margin-top: 2vw;
+}
+nav h2 {
+    text-align: center;
+    padding-top: 1vw;
+}
+.info-section {
+    background-color: aquamarine;
+    float: right;
+    width: 65%;
+    min-height: 60vw;
+    border-radius: 5%;
+    margin-left: 1vw;
+    margin-top: 2vw;
+    color: black;
+}
