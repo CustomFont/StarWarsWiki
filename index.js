@@ -11,23 +11,11 @@ let root = fetch(rootUrl)
     })
   
   // get all people
-let getAllPeople = fetch('https://swapi.dev/api/people/')
+let pageNumber = 1;
+let getAllPeople = fetch(`https://swapi.dev/api/people/?page=${pageNumber}`)
     .then(function(response) {
         return response.json()
     })
-  // get people by id
-let personID = 2;
-let getPeopleByID = fetch(`https://swapi.dev/api/people/${personID}/`)
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(response){
-        //console.log(response)
-        //console.log(Object.entries(response))
-        return Object.entries(response)
-    })
-
-
 
   // get all planets
 let getAllPlanets = fetch('https://swapi.dev/api/planets/')
@@ -82,9 +70,58 @@ let getAllVehicles = fetch('https://swapi.dev/api/vehicles/')
 
 
 //--------------------------------------
-let setItemID = function() {
+
+// Sidebar Functionality
+function getURL(event) { 
+  url = event.target.getAttribute('url');
+  displayItemInfo(url);
+}
+function listTenPeople() {
+    getAllPeople.then(peopleObject => {
+        for(let i = 0; i < peopleObject.results.length; i++) {
+            let item = document.createElement('li');
+            let url = peopleObject.results[i].url
+            item.setAttribute('url', url)
+            item.setAttribute('onclick', 'getURL(event)')      
+            item.textContent = peopleObject.results[i].name;
+            peopleList.appendChild(item)
+        }
+    })
+}
+function nextPeoplePage() {
+    pageNumber += 1;
+    if (pageNumber > 9) {
+        pageNumber = 1;
+    }
+    peopleList.innerHTML = '';
+    getAllPeople = fetch(`https://swapi.dev/api/people/?page=${pageNumber}`)
+        .then(function(response) {
+            return response.json()
+        })
+        .then(listTenPeople())
     
 }
+function displayItemInfo(url) {
+    let infoContainer = document.getElementById('infoContainer');
+    infoContainer.innerHTML = '';
+    console.log('asdf')
+    fetch(url)
+    .then((response) => response.json())
+    .then(item => {
+        let header = document.createElement('h1');
+        header.textContent = item.name
+        infoContainer.appendChild(header)
+        for (const property in item) {
+            if(property == 'name' || property == 'url' || property == 'created' || property == 'edited'){
+                continue
+            }
+            let line = document.createElement('p')
+            line.textContent = `${property}: ${item[property]}`
+            infoContainer.appendChild(line)
+        }
+    })       
+}
+
 function displayPeople() {
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';
@@ -95,14 +132,13 @@ function displayPeople() {
     let peopleList = document.createElement('ul');
     peopleList.setAttribute('id', 'peopleList')
     listContainer.appendChild(peopleList);
-    getAllPeople.then(peopleObject => {
-        for(let i = 0; i < peopleObject.results.length; i++) {
-            let item = document.createElement('li');
-            let itemText = document.createTextNode(peopleObject.results[i].name);
-            item.textContent = itemText;
-            peopleList.appendChild(item)
-        }
-        console.log(peopleObject.results[1].name)
-    })
+    listTenPeople();
+    let nextButton = document.createElement('p');
+    nextButton.setAttribute('id', 'nextButton');
+    nextButton.textContent = 'Next Page'
+    nextButton.setAttribute('onclick', 'nextPeoplePage()')
+    listContainer.appendChild(nextButton);
 }
-document.getElementByID('peopleSelector').addEventListener("click", displayPeople)
+document.getElementById('peopleSelector').addEventListener("click", displayPeople)
+document.getElementById('nextButton').addEventListener('click', nextPeoplePage)
+document.querySelector('url').addEventListener('click', displayItemInfo)
