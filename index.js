@@ -1,4 +1,4 @@
-let 
+
 const rootUrl = 'https://swapi.dev/api/'
 // get all root catagories
 let root = fetch(rootUrl)
@@ -15,10 +15,19 @@ let getAllPeople = fetch('https://swapi.dev/api/people/')
     .then(function(response) {
         return response.json()
     })
+  // get people by id
+let personID = 2;
+let getPeopleByID = fetch(`https://swapi.dev/api/people/${personID}/`)
+    .then(function(response) {
+        return response.json()
+    })
     .then(function(response){
         //console.log(response)
+        //console.log(Object.entries(response))
         return Object.entries(response)
     })
+
+
 
   // get all planets
 let getAllPlanets = fetch('https://swapi.dev/api/planets/')
@@ -70,16 +79,30 @@ let getAllVehicles = fetch('https://swapi.dev/api/vehicles/')
         return Object.entries(response)
     })
 
-// let getVehicleByID = fetch()
-
-
 
 
 //--------------------------------------
 let setItemID = function() {
     
 }
-let renderInfo = function(itemID) {
-
-
+function displayPeople() {
+    let listContainer = document.getElementById('listContainer');
+    listContainer.innerHTML = '';
+    let header = document.createElement('h2');
+    let headerText = document.createTextNode('People');
+    header.appendChild(headerText);
+    listContainer.appendChild(header);
+    let peopleList = document.createElement('ul');
+    peopleList.setAttribute('id', 'peopleList')
+    listContainer.appendChild(peopleList);
+    getAllPeople.then(peopleObject => {
+        for(let i = 0; i < peopleObject.results.length; i++) {
+            let item = document.createElement('li');
+            let itemText = document.createTextNode(peopleObject.results[i].name);
+            item.textContent = itemText;
+            peopleList.appendChild(item)
+        }
+        console.log(peopleObject.results[1].name)
+    })
 }
+document.getElementByID('peopleSelector').addEventListener("click", displayPeople)

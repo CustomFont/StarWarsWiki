@@ -10,30 +10,28 @@
                 Star Wars Mini Wiki
             </h1>
             <nav>
-                <a href="./people.html"><div>People</div></a>
-                <a type="button" href="./planets.html"><div>Planets</div></a>
-                <a type="button" href="./films.html"><div>Films</div></a>
-                <a type="button" href="./species.html"><div>Species</div></a>
-                <a type="button" href="./spaceships.html"><div>Starships</div></a>
-                <a type="button" href="./vehicles.html"><div>Vehicles</div></a>
+                <div id="peopleSelector" onclick="displayPeople()">People</div>
+                <div id="planetsSelector">Planets</div>
+                <div id="filmsSelector">Films</div>
+                <div id="speciesSelector">Species</div>
+                <div id="starshipsSelector">Starships</div>
+                <div id="vehiclesSelector">Vehicles</div>
+                <a type="button" href="./home.html"><div>Home</div></a>
             </nav>
         </header>
 
         <body>
             <div class="content-container">
-                <nav class="sidebar">
-                    <h2>People</h2>
-                    <a href="">insert link here</a>
-                    <a href="">insert link here</a>
-                    <a href="">insert link here</a>
-                    <a href="">insert link here</a>
-                    <a href="">insert link here</a>
+                <nav class="sidebar" id="listContainer">
+                    
+                    
                 </nav>
             
-                <section class="info-section">
-                    <h2 class="data-title">Name of thing here</h2>
-                    <p></p>
+                <section class="info-section" id="infoContainer">
+                    <h2 class="data-title" id="infoTitle">Name of butt here</h2>
+                    
                 </section>
             </div>
         </body>
+        <script src="../index.js"></script>
 </html>
