@@ -1,11 +1,12 @@
-import { pageNumber, getURL} from "./utility.js"
+import {getURL} from "./utility.js"
+let peoplePageNumber = 1;
 
-const getAllPeople = fetch(`https://swapi.dev/api/people/?page=${pageNumber}`)
+let getAllPeople = fetch(`https://swapi.dev/api/people/?page=${peoplePageNumber}`)
     .then(function(response) {
         return response.json()
     })
 
-const listTenPeople = () => {
+let listTenPeople = () => {
     getAllPeople.then(peopleObject => {
         for(let i = 0; i < peopleObject.results.length; i++) {
             let item = document.createElement('li');
@@ -18,20 +19,20 @@ const listTenPeople = () => {
     })
 }
 
-const nextPeoplePage = () => {
-    pageNumber += 1;
-    if (pageNumber > 9) {
-        pageNumber = 1;
+let nextPeoplePage = () => {
+    peoplePageNumber += 1;
+    if (peoplePageNumber > 9) {
+        peoplePageNumber = 1;
     }
     peopleList.innerHTML = '';
-    getAllPeople = fetch(`https://swapi.dev/api/people/?page=${pageNumber}`)
+    getAllPeople = fetch(`https://swapi.dev/api/people/?page=${peoplePageNumber}`)
         .then(function(response) {
             return response.json()
         })
         .then(listTenPeople())
 }
 
-const displayPeople = () => {
+let displayPeople = () => {
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';
     let header = document.createElement('h2');
@@ -44,8 +45,8 @@ const displayPeople = () => {
     listTenPeople();
     let nextButton = document.createElement('p');
     nextButton.setAttribute('id', 'nextButton');
-    nextButton.textContent = 'Next Page'
-    nextButton.setAttribute('onclick', 'nextPeoplePage()')
+    nextButton.textContent = 'Next Page';
+    nextButton.addEventListener('click', nextPeoplePage)
     listContainer.appendChild(nextButton);
 }
 

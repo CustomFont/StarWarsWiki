@@ -1,13 +1,14 @@
-import { getURL, pageNumber} from '../js/utility.js'
+import {getURL} from '../js/utility.js'
 
-const getAllSpecies = () => {  
+let speciesPageNumber = 1;
+let getAllSpecies = () => {  
     return fetch('https://swapi.dev/api/species/')
         .then(function(response) {
             return response.json()
         })
     }
     
-const listTenSpecies = () => {
+let listTenSpecies = () => {
     let speciesPromise = getAllSpecies() 
     speciesPromise.then(speciesObject => {
         for(let i = 0; i < speciesObject.results.length; i++) {
@@ -21,20 +22,20 @@ const listTenSpecies = () => {
     })
 }
 
-const nextSpeciesPage = () => {
-    pageNumber += 1;
-    if (pageNumber > 4) {
-        pageNumber = 1;
+let nextSpeciesPage = () => {
+    speciesPageNumber += 1;
+    if (speciesPageNumber > 4) {
+        speciesPageNumber = 1;
     }
     speciesList.innerHTML = '';
-    getAllSpecies = fetch(`https://swapi.dev/api/species/?page=${pageNumber}`)
+    getAllSpecies = fetch(`https://swapi.dev/api/species/?page=${speciesPageNumber}`)
         .then(function(response) {
             return response.json()
         })
         .then(listTenSpecies())
 }
 
-var displaySpecies = () => {
+let displaySpecies = () => {
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';
     let header = document.createElement('h2');
@@ -48,8 +49,8 @@ var displaySpecies = () => {
     let nextButton = document.createElement('p');
     nextButton.setAttribute('id', 'nextButton');
     nextButton.textContent = 'Next Page';
-    nextButton.setAttribute('onclick', 'nextSpeciesPage()');
+    nextButton.addEventListener('click', nextSpeciesPage());
     listContainer.appendChild(nextButton);
 }
-//module.exports = SpeciesMethods
+
 export { displaySpecies, getAllSpecies, listTenSpecies, nextSpeciesPage}

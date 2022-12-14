@@ -21,6 +21,6 @@ const getURL = (event) => {
   let url = event.target.getAttribute('url');
   displayItemInfo(url);
 }
-let pageNumber = 1;
 
-export {getURL, displayItemInfo, pageNumber}
+
+export {getURL, displayItemInfo}

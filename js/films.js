@@ -11,7 +11,7 @@ const listFilms = () => {
             let item = document.createElement('li');
             let url = filmsObject.results[i].url
             item.setAttribute('url', url)
-            item.addEventListener('click', getURL)     
+            item.addEventListener('click', getURL)
             item.textContent = filmsObject.results[i].title;
             filmsList.appendChild(item)
         }
