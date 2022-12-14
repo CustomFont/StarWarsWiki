@@ -1,7 +1,7 @@
-import {displayItemInfo} from './js/utility.js'
-import {displayFilms} from './js/films.js'
-import {displayPeople} from './js/people.js'
-import {displaySpecies} from "./js/species.js"
+import {displayItemInfo} from './utility.js'
+import {displayFilms} from './films.js'
+import {displayPeople} from './people.js'
+import {displaySpecies} from "./species.js"
 
 
   // get all planets
