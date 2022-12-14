@@ -53,4 +53,4 @@ let displaySpecies = () => {
     listContainer.appendChild(nextButton);
 }
 
-export { displaySpecies, getAllSpecies, listTenSpecies, nextSpeciesPage}
+export { displaySpecies}

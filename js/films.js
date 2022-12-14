@@ -30,4 +30,4 @@ const displayFilms = () => {
     listFilms();
 }
 
-export {displayFilms, listFilms}
+export {displayFilms}

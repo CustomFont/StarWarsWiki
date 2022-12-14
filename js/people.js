@@ -50,4 +50,4 @@ let displayPeople = () => {
     listContainer.appendChild(nextButton);
 }
 
-export {displayPeople, nextPeoplePage, listTenPeople, getAllPeople}
+export {displayPeople}
