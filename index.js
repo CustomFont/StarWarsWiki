@@ -22,8 +22,7 @@ let getAllVehicles = fetch('https://swapi.dev/api/vehicles/')
         return response.json()
     })
 
-//----------------Event Listeners------------------------
+//----------------Navbar Event Listeners------------------------
 document.getElementById('peopleSelector').addEventListener("click", displayPeople)
 document.getElementById('filmsSelector').addEventListener("click", displayFilms)
 document.getElementById('speciesSelector').addEventListener("click", displaySpecies)
-document.querySelector('url').addEventListener('click', displayItemInfo)
