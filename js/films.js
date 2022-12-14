@@ -1,10 +1,10 @@
 import {getURL} from "./utility.js"
 
-
 let getAllFilms = fetch('https://swapi.dev/api/films/')
     .then(function(response) {
         return response.json()
     })
+
 const listFilms = () => {
     getAllFilms.then(filmsObject => {
         for(let i = 0; i < filmsObject.results.length; i++) {
@@ -17,6 +17,7 @@ const listFilms = () => {
         }
     })
 }
+
 const displayFilms = () => {
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';

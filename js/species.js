@@ -1,16 +1,13 @@
 import {getURL} from '../js/utility.js'
-
 let speciesPageNumber = 1;
-let getAllSpecies = () => {  
-    return fetch('https://swapi.dev/api/species/')
+
+let getAllSpecies =  fetch('https://swapi.dev/api/species/')
         .then(function(response) {
             return response.json()
         })
-    }
     
 let listTenSpecies = () => {
-    let speciesPromise = getAllSpecies() 
-    speciesPromise.then(speciesObject => {
+    getAllSpecies.then(speciesObject => {
         for(let i = 0; i < speciesObject.results.length; i++) {
             let item = document.createElement('li');
             let url = speciesObject.results[i].url.toString()
@@ -53,4 +50,4 @@ let displaySpecies = () => {
     listContainer.appendChild(nextButton);
 }
 
-export { displaySpecies}
+export {displaySpecies}
