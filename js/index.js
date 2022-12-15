@@ -1,4 +1,3 @@
-import {displayItemInfo} from './utility.js'
 import {displayFilms} from './films.js'
 import {displayPeople} from './people.js'
 import {displaySpecies} from "./species.js"

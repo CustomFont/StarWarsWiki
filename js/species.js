@@ -46,7 +46,7 @@ let displaySpecies = () => {
     let nextButton = document.createElement('p');
     nextButton.setAttribute('id', 'nextButton');
     nextButton.textContent = 'Next Page';
-    nextButton.addEventListener('click', nextSpeciesPage());
+    nextButton.addEventListener('click', nextSpeciesPage);
     listContainer.appendChild(nextButton);
 }
 

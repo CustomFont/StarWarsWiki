@@ -68,7 +68,7 @@ function displayVehicles() {
     let nextButton = document.createElement('p');
     nextButton.setAttribute('id', 'nextButton');
     nextButton.textContent = 'Next Page'
-    nextButton.addEventListener('click', nextVehiclesPage())
+    nextButton.addEventListener('click', nextVehiclesPage)
     listContainer.appendChild(nextButton);
 }
 

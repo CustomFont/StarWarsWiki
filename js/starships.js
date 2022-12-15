@@ -46,7 +46,7 @@ let displayStarships = () => {
     let nextButton = document.createElement('p');
     nextButton.setAttribute('id', 'nextButton');
     nextButton.textContent = 'Next Page'
-    nextButton.addEventListener('click', nextStarshipsPage())
+    nextButton.addEventListener('click', nextStarshipsPage)
     listContainer.appendChild(nextButton);
 }
 

@@ -46,7 +46,7 @@ let displayPlanets = () => {
     let nextButton = document.createElement('p');
     nextButton.setAttribute('id', 'nextButton');
     nextButton.textContent = 'Next Page'
-    nextButton.addEventListener('click', nextPlanetsPage())
+    nextButton.addEventListener('click', nextPlanetsPage)
     listContainer.appendChild(nextButton);
 }
 
