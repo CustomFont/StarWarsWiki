@@ -12,10 +12,7 @@ header{
 header img {
     height: 5vw;
 }
-header h1 {
-    font-size: 3.5vw;
-    padding-left: -10vw;
-}
+
 header nav {
     display:flex;
     align-self: center;
@@ -72,4 +69,13 @@ nav h2 {
 .data-title {
     padding: 1vw 1vw 1vw 4vw;
 
+}
+#infoHeader {
+    color: orchid;
+}
+
+#pageTitle {
+    color:#FFE81F;
+    font-size: 3.5vw;
+    padding-left: -10vw;
 }
