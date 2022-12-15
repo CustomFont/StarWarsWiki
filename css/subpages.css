@@ -36,7 +36,6 @@ header nav div {
     font-weight: bold;
     transition: transform .2s;
     text-align:center;
-    
 }
 header nav div:hover {
     transform: scale(1.5);
@@ -48,7 +47,7 @@ body {
     display: flex;
     text-align: left;
     flex-direction:column;
-    background-color: rgb(41, 42, 45);
+    background-color: rgba(41, 42, 45, 0.847);
     color: black;
     width: 30%;
     min-height: 60vw;
@@ -58,13 +57,15 @@ body {
     margin-top: 2vw;
 }
 nav h2 {
+    color:#FFE81F;
     text-align: center;
     padding-top: 1vw;
+    margin-bottom: 0px;
 }
 section {
     display: flex;
     flex-direction: column;
-    background-color: rgb(41, 42, 45);
+    background-color: rgb(41, 42, 45, 0.847);
     float: right;
     width: 65%;
     min-height: 60vw;
@@ -75,7 +76,7 @@ section {
     color: black;
 }
 section img {
-    max-height: 250px;
+    max-height: 30vw;
 }
 .data-title {
     padding: 1vw 1vw 1vw 4vw;
@@ -85,7 +86,7 @@ section img {
     color: black;
 }
 h2 {
-    font-size: 3vw;
+    font-size: 4vw;
 }
 ul {
     margin-right: 3vw;
@@ -97,7 +98,6 @@ ul {
     line-height: 3vw;
     align-content: center;
     color: black;
-    cursor: pointer;
 }
 p {
     display: flex;
@@ -121,12 +121,15 @@ section p {
 }
 #nextButton {
     cursor: pointer;
+    border: 5px ridge rgba(255, 255, 255, 0.574);
+    background-color: grey;
+    text-align: center;
 }
 
 li {
     text-align: center;
-    border-color: black;
-    border: 5px ridge white;
+    border: 5px ridge rgba(255, 255, 255, 0.574);
     margin: 5px;
     background-color: grey;
+    cursor: pointer;
 }
