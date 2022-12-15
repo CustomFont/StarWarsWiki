@@ -82,7 +82,7 @@
     "https://swapi.dev/api/people/74/": "https://i0.wp.com/makingstarwars.net/wp-content/uploads/2016/02/image-4.png?resize=522%2C633",
     "https://swapi.dev/api/people/75/": "https://lumiere-a.akamaihd.net/v1/images/r4-p17_19602f62.jpeg?region=314%2C0%2C1181%2C665&width=960",
     "https://swapi.dev/api/people/76/": "https://lumiere-a.akamaihd.net/v1/images/1-wat-tambor-bio-1_copy_279d4f2b.jpeg?region=154%2C0%2C972%2C547&width=960",
-    "https://swapi.dev/api/people/77/": "https://vignette3.wikia.nocookie.net/banthapedia/images/0/06/SanHill.jpg/revision/latest?cb=20090924175308",
+    "https://swapi.dev/api/people/77/": "https://vignette3.wikia.nocookie.net/banthapedia/images/0/06/SanHill.jpg",
     "https://swapi.dev/api/people/78/": "http://2.bp.blogspot.com/_N_ozKEpiQps/TLN_4UG3JnI/AAAAAAAAEqA/oc4AQop6sQU/s1600/Promo02.jpg",
     "https://swapi.dev/api/people/79/": "https://lumiere-a.akamaihd.net/v1/images/General-Grievous_c9df9cb5.jpeg?region=0%2C8%2C1200%2C600",
     "https://swapi.dev/api/people/80/": "https://live.staticflickr.com/1016/4734569772_23ca662822_b.jpg",
@@ -191,7 +191,7 @@
 
     "https://swapi.dev/api/starships/1/": null,
     "https://swapi.dev/api/starships/2/": "https://static.wikia.nocookie.net/starwars/images/3/39/CR90.png",
-    "https://swapi.dev/api/starships/3/": " https://static.wikia.nocookie.net/starwars/images/6/64/ISD-1-SV.png/revision/latest?cb=20220404051016",
+    "https://swapi.dev/api/starships/3/": " https://static.wikia.nocookie.net/starwars/images/6/64/ISD-1-SV.png",
     "https://swapi.dev/api/starships/4/": null, 
     "https://swapi.dev/api/starships/5/": " https://static.wikia.nocookie.net/starwars/images/5/5b/Imperial_Sentinel-class_shuttle.png",
     "https://swapi.dev/api/starships/6/": null,
