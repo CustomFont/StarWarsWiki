@@ -88,6 +88,8 @@ h2 {
     font-size: 3vw;
 }
 ul {
+    margin-right: 3vw;
+    list-style-type: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,3 +123,10 @@ section p {
     cursor: pointer;
 }
 
+li {
+    text-align: center;
+    border-color: black;
+    border: 5px ridge white;
+    margin: 5px;
+    background-color: grey;
+}
