@@ -10,9 +10,14 @@ header{
     justify-content: space-between;
 }
 header img {
-    height: 5vw;
+    height: 120px;
+    width: 250px
 }
-
+#pageTitle {
+    color:#FFE81F;
+    font-size: 3.5vw;
+    padding-left: -10vw;
+}
 header nav {
     display:flex;
     align-self: center;
@@ -22,9 +27,8 @@ header nav div {
     color:#FFE81F;
     border-color: black;
     border-width: 0px;
-    height: 10vw;
-    width: 10vw;
-    min-width: 100px;
+    min-width: 103px;
+    min-height: 103px;
     background: url('https://w7.pngwing.com/pngs/361/43/png-transparent-star-wars-tiny-death-star-yoda-anakin-skywalker-r2-d2-death-star-purple-sphere-r2d2-thumbnail.png') no-repeat scroll;
     background-color: black;
     background-size: contain;
@@ -44,7 +48,7 @@ body {
     display: flex;
     text-align: left;
     flex-direction:column;
-    background-color: rgb(255, 232, 31);
+    background-color: rgb(41, 42, 45);
     color: black;
     width: 30%;
     min-height: 60vw;
@@ -57,32 +61,28 @@ nav h2 {
     text-align: center;
     padding-top: 1vw;
 }
-.info-section {
+section {
     display: flex;
     flex-direction: column;
-    background-color: rgb(235, 33,46);
+    background-color: rgb(41, 42, 45);
     float: right;
     width: 65%;
     min-height: 60vw;
-    border-radius: 5%;
     margin-right: 1vw;
-    margin-left: 1vw;
     margin-top: 2vw;
+    border-radius: 5%;
+    border: 1vw, groove, rgb(5, 6, 6);
     color: black;
 }
-img {
-    height: 250px;
-    width: 250px;
+section img {
+    max-height: 250px;
 }
 .data-title {
     padding: 1vw 1vw 1vw 4vw;
-
 }
 #listContainer {
     display: flex;
-    justify-content: space-between;
     color: black;
-
 }
 h2 {
     font-size: 3vw;
@@ -94,10 +94,11 @@ ul {
     font-size: 22px;
     line-height: 3vw;
     align-content: center;
+    color: black;
+    cursor: pointer;
 }
 p {
     display: flex;
-    justify-content: left;
     padding: 10px;
     font-size: 18px;
 }
@@ -105,19 +106,18 @@ body h1{
     color: black;
     line-height: 20px;
 }
+section p {
+    color:(5, 6, 6);
+    font-weight: 600;
+}
 #infoHeader {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     color: black;
     padding-right: 20px;
     font-size: 3vw;
 }
-#infoBody {
-    color: blue;
+#nextButton {
+    cursor: pointer;
 }
 
-#pageTitle {
-    color:#FFE81F;
-    font-size: 3.5vw;
-    padding-left: -10vw;
-}

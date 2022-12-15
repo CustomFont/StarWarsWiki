@@ -33,7 +33,7 @@ function displayItemInfo(url) {
         if (property == 'name' || property == 'url' || property == 'created' || property == 'edited' || property == 'title') {
           continue;
         }
-        let line = document.createElement('p');
+        let line = document.createElement('div');
         line.textContent = `${property}: ${item[property]}`;
         infoContainer.appendChild(line);
       }
