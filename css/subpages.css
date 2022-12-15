@@ -133,3 +133,7 @@ li {
     background-color: grey;
     cursor: pointer;
 }
+.info-section div{
+    border: 5px ridge rgba(255, 255, 255, 0.574);
+    background-color: grey;
+}
