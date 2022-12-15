@@ -17,7 +17,7 @@ function displayItemInfo(url) {
       let img = document.createElement('img');
       img.setAttribute('alt', 'Image Here');
       // images.js ---> key = url of selected item/ value = image src
-      fetch('./images/images.json')
+      fetch('/images/images.json')
         .then(data => data.json())
         .then(imageData => {
           for (const image in imageData) {
