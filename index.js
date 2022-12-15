@@ -33,7 +33,7 @@ function displayItemInfo(url) {
         if (property == 'name' || property == 'url' || property == 'created' || property == 'edited' || property == 'title') {
           continue;
         }
-        let line = document.createElement('p');
+        let line = document.createElement('div');
         line.textContent = `${property}: ${item[property]}`;
         infoContainer.appendChild(line);
       }
@@ -84,6 +84,7 @@ function listItems() {
 }
 
 //utilized to caplitalize the section header in the sidebar
+// may be able to replace this in css
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
