@@ -78,34 +78,6 @@ img {
     padding: 1vw 1vw 1vw 4vw;
 
 }
-<<<<<<< HEAD
-#listContainer {
-    display: flex;
-    justify-content: space-between;
-    color: black;
-
-}
-h2 {
-    font-size: 3vw;
-}
-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 22px;
-    line-height: 3vw;
-    align-content: center;
-}
-p {
-    display: flex;
-    justify-content: left;
-    padding: 10px;
-    font-size: 18px;
-}
-body h1{
-    color: black;
-    line-height: 20px;
-=======
 #infoHeader {
     color: orchid;
 }
@@ -114,5 +86,4 @@ body h1{
     color:#FFE81F;
     font-size: 3.5vw;
     padding-left: -10vw;
->>>>>>> 8243a518dc4ebfbfa34b2aa97f79ad04c4d9e223
 }
