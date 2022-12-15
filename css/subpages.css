@@ -78,7 +78,6 @@ img {
     padding: 1vw 1vw 1vw 4vw;
 
 }
-<<<<<<< HEAD
 #listContainer {
     display: flex;
     justify-content: space-between;
@@ -105,14 +104,20 @@ p {
 body h1{
     color: black;
     line-height: 20px;
-=======
+}
 #infoHeader {
-    color: orchid;
+    display: flex;
+    justify-content: right;
+    color: black;
+    padding-right: 20px;
+    font-size: 3vw;
+}
+#infoBody {
+    color: blue;
 }
 
 #pageTitle {
     color:#FFE81F;
     font-size: 3.5vw;
     padding-left: -10vw;
->>>>>>> 8243a518dc4ebfbfa34b2aa97f79ad04c4d9e223
 }
