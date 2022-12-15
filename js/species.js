@@ -1,38 +1,34 @@
 import {getURL} from '../js/utility.js'
-let speciesPageNumber = 1;
+let pageNumber = 1;
 
-let getAllSpecies =  fetch('https://swapi.dev/api/species/')
+let listTenSpecies = () => {
+    fetch(`https://swapi.dev/api/species/?page=${pageNumber}`)
         .then(function(response) {
             return response.json()
         })
-    
-let listTenSpecies = () => {
-    getAllSpecies.then(speciesObject => {
-        for(let i = 0; i < speciesObject.results.length; i++) {
-            let item = document.createElement('li');
-            let url = speciesObject.results[i].url.toString()
-            item.setAttribute('url', url)
-            item.addEventListener('click', getURL) 
-            item.textContent = speciesObject.results[i].name;
-            speciesList.appendChild(item)
-        }
+        .then(speciesObject => {
+            for(let i = 0; i < speciesObject.results.length; i++) {
+                let item = document.createElement('li');
+                let url = speciesObject.results[i].url.toString()
+                item.setAttribute('url', url)
+                item.addEventListener('click', getURL) 
+                item.textContent = speciesObject.results[i].name;
+                speciesList.appendChild(item)
+            }
     })
 }
 
 let nextSpeciesPage = () => {
-    speciesPageNumber += 1;
-    if (speciesPageNumber > 4) {
-        speciesPageNumber = 1;
+    pageNumber += 1;
+    if (pageNumber > 4) {
+        pageNumber = 1;
     }
     speciesList.innerHTML = '';
-    getAllSpecies = fetch(`https://swapi.dev/api/species/?page=${speciesPageNumber}`)
-        .then(function(response) {
-            return response.json()
-        })
-        .then(listTenSpecies())
+    listTenSpecies()
 }
 
 let displaySpecies = () => {
+    pageNumber = 1;
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';
     let header = document.createElement('h2');

@@ -1,38 +1,34 @@
 import {getURL} from "./utility.js"
-let peoplePageNumber = 1;
-
-let getAllPeople = fetch(`https://swapi.dev/api/people/?page=${peoplePageNumber}`)
-    .then(function(response) {
-        return response.json()
-    })
+let pageNumber = 1;
 
 let listTenPeople = () => {
-    getAllPeople.then(peopleObject => {
-        for(let i = 0; i < peopleObject.results.length; i++) {
-            let item = document.createElement('li');
-            let url = peopleObject.results[i].url
-            item.setAttribute('url', url)
-            item.addEventListener('click', getURL)      
-            item.textContent = peopleObject.results[i].name;
-            peopleList.appendChild(item)
-        }
-    })
-}
-
-let nextPeoplePage = () => {
-    peoplePageNumber += 1;
-    if (peoplePageNumber > 9) {
-        peoplePageNumber = 1;
-    }
-    peopleList.innerHTML = '';
-    getAllPeople = fetch(`https://swapi.dev/api/people/?page=${peoplePageNumber}`)
+    fetch(`https://swapi.dev/api/people/?page=${pageNumber}`)
         .then(function(response) {
             return response.json()
         })
-        .then(listTenPeople())
+        .then(peopleObject => {
+            for(let i = 0; i < peopleObject.results.length; i++) {
+                let item = document.createElement('li');
+                let url = peopleObject.results[i].url
+                item.setAttribute('url', url)
+                item.addEventListener('click', getURL)      
+                item.textContent = peopleObject.results[i].name;
+                peopleList.appendChild(item)
+            }
+        })
+}
+
+let nextPeoplePage = () => {
+    pageNumber += 1;
+    if (pageNumber > 9) {
+        pageNumber = 1;
+    }
+    peopleList.innerHTML = '';
+    listTenPeople()
 }
 
 let displayPeople = () => {
+    pageNumber = 1;
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';
     let header = document.createElement('h2');

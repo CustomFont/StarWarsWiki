@@ -1,38 +1,34 @@
 import {getURL} from "./utility.js"
-let pageNumberStarships = 1;  
-
-let getAllStarships = fetch(`https://swapi.dev/api/starships/?page=${pageNumberStarships}`)
-    .then(function(response) {
-        return response.json()
-    })
+let pageNumber= 1;  
 
 let listTenStarships = () => {
-    getAllStarships.then(starshipsObject => {
-        for(let i = 0; i < starshipsObject.results.length; i++) {
-            let item = document.createElement('li');
-            let url = starshipsObject.results[i].url
-            item.setAttribute('url', url)
-            item.addEventListener('click', getURL)   
-            item.textContent = starshipsObject.results[i].name;
-            starshipsList.appendChild(item)
-        }
-    })
-}
-
-let nextStarshipsPage = () => {
-    pageNumberStarships += 1;
-    if (pageNumberStarships > 4) {
-    pageNumberStarships = 1;
-    }
-    starshipsList.innerHTML = '';
-    getAllStarships = fetch(`https://swapi.dev/api/starships/?page=${pageNumberStarships}`)
+    fetch(`https://swapi.dev/api/starships/?page=${pageNumber}`)
         .then(function(response) {
             return response.json()
         })
-        .then(listTenStarships())
+        .then(starshipsObject => {
+            for(let i = 0; i < starshipsObject.results.length; i++) {
+                let item = document.createElement('li');
+                let url = starshipsObject.results[i].url
+                item.setAttribute('url', url)
+                item.addEventListener('click', getURL)   
+                item.textContent = starshipsObject.results[i].name;
+                starshipsList.appendChild(item)
+            }
+        })
+}
+
+let nextStarshipsPage = () => {
+    pageNumber += 1;
+    if (pageNumber > 4) {
+        pageNumber = 1;
+    }
+    starshipsList.innerHTML = '';
+    listTenStarships()
 }
 
 let displayStarships = () => {
+    pageNumber = 1;
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';
     let header = document.createElement('h2');

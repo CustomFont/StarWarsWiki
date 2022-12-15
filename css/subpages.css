@@ -12,10 +12,7 @@ header{
 header img {
     height: 5vw;
 }
-header h1 {
-    font-size: 3.5vw;
-    padding-left: -10vw;
-}
+
 header nav {
     display:flex;
     align-self: center;
@@ -81,6 +78,7 @@ img {
     padding: 1vw 1vw 1vw 4vw;
 
 }
+<<<<<<< HEAD
 #listContainer {
     display: flex;
     justify-content: space-between;
@@ -107,4 +105,14 @@ p {
 body h1{
     color: black;
     line-height: 20px;
+=======
+#infoHeader {
+    color: orchid;
+}
+
+#pageTitle {
+    color:#FFE81F;
+    font-size: 3.5vw;
+    padding-left: -10vw;
+>>>>>>> 8243a518dc4ebfbfa34b2aa97f79ad04c4d9e223
 }
