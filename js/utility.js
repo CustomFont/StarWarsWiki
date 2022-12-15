@@ -5,7 +5,8 @@ const displayItemInfo = (url) => {
     .then((response) => response.json())
         .then(item => {
             let header = document.createElement('h1');
-            header.textContent = item.name
+            if (item.title) {header.textContent = item.title}
+            if (item.name) {header.textContent = item.name}
             infoContainer.appendChild(header)
             let img = document.createElement('img');
             img.setAttribute('alt', 'Image Here')
@@ -21,7 +22,7 @@ const displayItemInfo = (url) => {
                 })
             infoContainer.appendChild(img)
             for (const property in item) {
-                if(property == 'name' || property == 'url' || property == 'created' || property == 'edited'){
+                if(property == 'name' || property == 'url' || property == 'created' || property == 'edited' || property == 'title'){
                     continue
                 }
                 let line = document.createElement('p')

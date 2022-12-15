@@ -1,24 +1,25 @@
 import {getURL} from "./utility.js"
+let pageNumber = 1;
 
-let getAllFilms = fetch('https://swapi.dev/api/films/')
-    .then(function(response) {
-        return response.json()
-    })
-
-const listFilms = () => {
-    getAllFilms.then(filmsObject => {
-        for(let i = 0; i < filmsObject.results.length; i++) {
-            let item = document.createElement('li');
-            let url = filmsObject.results[i].url
-            item.setAttribute('url', url)
-            item.addEventListener('click', getURL)
-            item.textContent = filmsObject.results[i].title;
-            filmsList.appendChild(item)
-        }
-    })
+let listFilms = () => {
+    fetch(`https://swapi.dev/api/films/?page=${pageNumber}`)
+        .then(function(response) {
+            return response.json()
+        })
+        .then(filmsObject => {
+            for(let i = 0; i < filmsObject.results.length; i++) {
+                let item = document.createElement('li');
+                let url = filmsObject.results[i].url
+                item.setAttribute('url', url)
+                item.addEventListener('click', getURL)
+                item.textContent = filmsObject.results[i].title;
+                filmsList.appendChild(item)
+            }
+        })
 }
 
-const displayFilms = () => {
+let displayFilms = () => {
+    pageNumber = 1;
     let listContainer = document.getElementById('listContainer');
     listContainer.innerHTML = '';
     let header = document.createElement('h2');
