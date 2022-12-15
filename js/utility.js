@@ -9,7 +9,7 @@ const displayItemInfo = (url) => {
             infoContainer.appendChild(header)
             let img = document.createElement('img');
             img.setAttribute('alt', 'Image Here')
-            fetch('../images/species.json')
+            fetch('../images/images.json')
                 .then(data => data.json())
                 .then(imageData => {
                     for (const image in imageData){
